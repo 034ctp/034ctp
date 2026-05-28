@@ -1,0 +1,19 @@
+services:
+  astrbot:
+    image: soulter/astrbot:latest
+    container_name: astrbot
+    restart: always
+    ports:
+      # AstrBot WebUI.
+      - "6185:6185"
+      # AstrBot OneBot v11 reverse WebSocket.
+      - "6199:6199"
+      # Optional plugin WebUI port, for example meme_manager.
+      - "5000:5000"
+    volumes:
+      # Persist AstrBot config, providers, plugins, personas, and knowledge bases.
+      - ./data:/AstrBot/data
+      # Optional timezone mounts for Linux hosts.
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+

@@ -1,0 +1,20 @@
+services:
+  napcat:
+    image: mlikiowa/napcat-docker:latest
+    container_name: napcat
+    restart: always
+    environment:
+      - NAPCAT_UID=${NAPCAT_UID}
+      - NAPCAT_GID=${NAPCAT_GID}
+    ports:
+      # NapCat WebUI. Open this only to trusted IPs.
+      - "6099:6099"
+      # Optional OneBot / auxiliary ports used by some NapCat configs.
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      # NapCat configuration.
+      - ./napcat/config:/app/napcat/config
+      # Persist QQ login data. Do not commit this directory.
+      - ./ntqq:/app/.config/QQ
+

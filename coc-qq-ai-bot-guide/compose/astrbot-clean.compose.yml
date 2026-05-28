@@ -1,0 +1,18 @@
+services:
+  astrbot_clean:
+    image: soulter/astrbot:latest
+    container_name: astrbot_clean
+    restart: always
+    ports:
+      # Host 6186 -> container 6185, useful when another AstrBot already used 6185.
+      - "6186:6185"
+      # Host 6198 -> container 6199. NapCat inside Docker should still use
+      # ws://astrbot_clean:6199/ws when both containers share one Docker network.
+      - "6198:6199"
+      # Optional plugin WebUI port, for example meme_manager.
+      - "5000:5000"
+    volumes:
+      - ./data:/AstrBot/data
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+
