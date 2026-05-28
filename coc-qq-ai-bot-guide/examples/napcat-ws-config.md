@@ -65,11 +65,5 @@ ws://127.0.0.1:6199/ws
 
 因为在 NapCat 容器内，`127.0.0.1` 指的是 NapCat 自己，不是 AstrBot。
 
-也不要在 Linux 终端直接执行：
 
-```bash
-ws://astrbot_clean:6199/ws
-```
-
-这是地址，不是命令。
 
