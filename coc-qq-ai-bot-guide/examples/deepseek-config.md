@@ -64,12 +64,4 @@ deepseek-reasoner
 
 如果 WebUI 内能回复，但 QQ 群不回复，说明 DeepSeek 配置基本正常，问题多半在 NapCat、OneBot 或群聊触发链路。
 
-## 不要提交到 GitHub 的内容
-
-```text
-API Key
-cmd_config.json
-模型服务商完整配置截图
-任何包含余额、密钥、账号信息的日志
-```
 
